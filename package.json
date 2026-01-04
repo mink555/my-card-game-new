@@ -1,0 +1,12 @@
+{
+  "name": "card-game-with-mcp",
+  "version": "1.0.0",
+  "description": "Canvas Card Flipping Game with Supabase integration",
+  "scripts": {
+    "build": "echo \"window.ENV = { SUPABASE_URL: '${SUPABASE_URL}', SUPABASE_KEY: '${SUPABASE_KEY}' };\" > env.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
+
