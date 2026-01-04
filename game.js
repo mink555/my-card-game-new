@@ -5,10 +5,14 @@ const remainingEl = document.getElementById('remaining');
 const resetBtn = document.getElementById('reset-btn');
 const scoreListEl = document.getElementById('score-list');
 
-// Supabase 설정
-const SUPABASE_URL = 'https://srggtepabwrvlaeubfrx.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InNyZ2d0ZXBhYndydmxhZXViZnJ4Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njc1MjYzNDAsImV4cCI6MjA4MzEwMjM0MH0.-3YSQlnaC1Ju34PQloXu6hpHxIAekECR7fC4se6vUpE';
-// 라이브러리 객체와 클라이언트 인스턴스 이름이 겹치지 않게 수정
+// Supabase 설정 (env.js 또는 시스템 환경 변수에서 가져옴)
+const SUPABASE_URL = window.ENV?.SUPABASE_URL || '';
+const SUPABASE_KEY = window.ENV?.SUPABASE_KEY || '';
+
+if (!SUPABASE_URL || !SUPABASE_KEY) {
+    console.error('Supabase 설정이 누락되었습니다. env.js 파일이나 환경 변수를 확인하세요.');
+}
+
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 // 게임 설정
