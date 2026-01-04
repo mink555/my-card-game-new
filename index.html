@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canvas 카드 뒤집기 게임</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Confetti 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.9.3/dist/confetti.browser.min.js"></script>
+    <!-- Supabase 라이브러리 추가 -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>카드 뒤집기 게임</h1>
+        <div class="stats">
+            <span>시도 횟수: <span id="moves">0</span></span>
+            <span>남은 카드: <span id="remaining">16</span></span>
+            <button id="reset-btn">다시 시작</button>
+        </div>
+        <canvas id="gameCanvas"></canvas>
+        
+        <div class="leaderboard">
+            <h2>🏆 명예의 전당 (Top 5)</h2>
+            <ul id="score-list">
+                <li>데이터를 불러오는 중...</li>
+            </ul>
+        </div>
+    </div>
+    <script src="game.js"></script>
+</body>
+</html>
+
